@@ -1,0 +1,21 @@
+<div class="container">
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h4"><%= link_to "New List", new_list_path%></span>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Lista de Peliculas
+    </div>
+  </div>
+
+
+  <div class="cards">
+    <% @lists.each do |list|  %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+    <% end %>
+  </div>
+</div>

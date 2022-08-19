@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Lista y Detalle</h1>
+
+   <ul class="list-group list-group list-group-flush">
+      <% @list.movies.each do |movie|  %>
+        <li class="list-group-item"> <%= movie.title %></li>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% end %>
+  </ul>
+
+  <%= link_to "Add a new movie", new_list_bookmark_path(@list), class: "btn btn-secondary" %>
+  <%= link_to "Volver a la lista", lists_path, class: "btn btn-secondary" %>
+</div>
