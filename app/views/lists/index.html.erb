@@ -6,18 +6,19 @@
   </nav>
   <div class="container py-5">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Lista de Peliculas
+      Lista of Movies
     </div>
   </div>
-
-  <div class="cards">
-    <% @lists.each do |list|  %>
-      <% if list.photos.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url('<%= cl_image_path list.photos.first.key, height: 300, crop: :fill %>')">
-          <%= link_to list.name, list_path(list) %>
-        </div>
+  <div class="container py-2">
+    <div class="cards">
+      <% @lists.each do |list|  %>
+        <% if list.photos.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url('<%= cl_image_path list.photos.first.key, height: 300, crop: :fill %>')">
+            <%= link_to list.name, list_path(list), class: "text-light text-decoration-none" %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

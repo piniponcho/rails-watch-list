@@ -20,7 +20,7 @@
     </div>
     <div class="container d-flex justify-content-center py-2">
       <% @list.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 100, width: 250, crop: :fill %>
+        <%= cl_image_tag photo.key, height: 300, width: 250, crop: :fill %>
       <% end %>
     </div>
     <div class="container py-2">
@@ -30,9 +30,12 @@
         <% end %>
       </ol>
     </div>
-
-    <div class="container py-1">
-      <%= render "reviews/form" %>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-lg-3">
+          <div class="bg-white rounded p-3 shadow">
+            <%= render "/reviews/form" %>
+          </div>
+        </div>
     </div>
-  </div>
 </div>
