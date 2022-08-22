@@ -1,6 +1,10 @@
-<div class="container">
-  <h1>New List</h1>
-
-  <%= render "form" %>
-  <li> <%= link_to "Volver a la Lista", lists_path %></li>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new list</h3>
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
 </div>
